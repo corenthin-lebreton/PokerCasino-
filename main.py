@@ -34,8 +34,8 @@ def gamer():
 
 def game():
 
-  bet = int(request.form["Bet"])
-  if bet > session['Banque']:
+  session['Bet'] = int(request.form["Bet"])
+  if session['Bet'] > session['Banque']:
     session ['error-message'] = "Désolé mais votre mise est supérieure à l'argent sur votre compte"
     return render_template('game.html')
   else:
@@ -48,10 +48,7 @@ def draw():
   return render_template("draw.html")
 
 
-@app.route('/tirage', methods=["POST"])
-def first_draw():
-  Bet = int(request.form["Bet"])
-  return render_template('draw.html')
+
 
 if __name__ == '__main__':
   app.run(debug = True)
