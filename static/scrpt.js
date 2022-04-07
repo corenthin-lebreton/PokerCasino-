@@ -1,4 +1,4 @@
-const play          = () => location.href = "/initialization";
+const play          = () => location.href = "/tirage";
 const restart       = () => location.href = "/board";
 const goHomePage    = () => location.href = "/";
 

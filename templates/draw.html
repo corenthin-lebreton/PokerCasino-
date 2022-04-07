@@ -21,20 +21,24 @@
             <p class="mise">Votre mise : {{session['Bet'] }}</p>
             
             <br>
+            <br>
+            <br>
 
-            
+            <div>
+
+                    {% for card in session["drawed_cards"] %}
+
+                        <input class="label" type="checkbox" class="form-check-input" id="{{ card }}" name="{{ card }}" />
+                        <label class="form-check-label" for="{{ card }}">
+                            <img class="card-img" data-card="{{card}}" data-keep="true" src="{{ url_for('static',filename='cards/'+card+'.png') }}" alt="card-video-poker" onclick="clickOnCardForReverse(this)"/>
+                        </label>
+                    {% endfor %}
 
 
-                <br>
-                <br>
 
-            <div class="cards">
-                <img class="card-img" id='data-card' src="{{ url_for('static', filename='cards/back.png') }}" alt="card-back-video-poker" />
-                <img class="card-img" src="{{ url_for('static', filename='cards/back.png') }}" alt="card-back-video-poker" />
-                <img class="card-img" src="{{ url_for('static', filename='cards/back.png') }}" alt="card-back-video-poker" />
-                <img class="card-img" src="{{ url_for('static', filename='cards/back.png') }}" alt="card-back-video-poker" />
-                <img class="card-img" src="{{ url_for('static', filename='cards/back.png') }}" alt="card-back-video-poker" />
             </div>
+
+                
         </div>
 
 
@@ -45,6 +49,6 @@
         
     </footer>
     <script type="text/javascript"
-         src="{{ url_for('static', filename='scrpt.js') }}"></script>
+         src="{{ url_for('static',filename='scrpt.js') }}"></script>
 </body>
 </html>
