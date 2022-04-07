@@ -8,13 +8,13 @@
     <link rel='stylesheet' type='text/css' media='screen' href='{{ url_for( 'static' ,filename="styles.css")}}'>
     <script src=''></script>
 </head>
-<body>
+<body id="Acceuil">
         <header>
-                <h2 class ="title">BIENVENUE SUR LE POKER DE L'IPSSI</h2>
+                <h2 class ="title">TAVERN POKER</h2>
 
         </header>
 <main>
-        <div>
+        <div class="parchemin">
                 {% if session['error-form'] %}
 
                 <div class="message-error">{{ session["error-form"] }}
@@ -24,11 +24,13 @@
 
 
 
-                <form method="post">
-                        <input name ="age" type="number" value="O" placeholder="Entrez votre âge" required>
-                        <input name ="Banque" type="number" value="O" placeholder="Mettez de l'argent dans la banque" required>
-                        <input type="submit" value="Valider">
+                <form method="post" class="formulaire">
+                        <input class="inputbasic sword" name ="age" type="number" value="O" placeholder="Entrez votre âge" required>
+                        <input class="inputbasic gold" name ="Banque" type="number" value="O" placeholder="Placez votre Banque" required>
+                        <input class="inputbasic" type="submit" value="Valider">
                 </form>
+
+                <img class="sceau" src="static/Image/warhammer.png"></img>
         </div>
 
 </main>
