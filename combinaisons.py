@@ -1,5 +1,6 @@
 from time import sleep
 from iteration_utilities import duplicates
+from numpy import result_type
 
 def uncomposedCards(LastDraw):
   cardsValue = []
@@ -27,67 +28,50 @@ def uncomposedCards(LastDraw):
 def Combinaisons(LastDraw, bankroll, betPlayer):
 
   if QuinteFlushRoyale(LastDraw):
-    print("Quelle chance incroyable ! Vous avez obtenu une Quinte Flush Royale ! Improbable !")
-    bankroll = (bankroll-betPlayer)+(betPlayer * 250)
-    sleep(1)
-    print("Le gain  a été crédité sur votre compte. Vous avez maintenant " + str(bankroll) + "€ sur votre compte")
-
+    resultat = "Félicitation ! Vous avez obtenu une Quinte Flush Royale"
+    g = (bankroll-betPlayer)+(betPlayer * 250)
+    return resultat,g
 
   elif QuinteFlush(LastDraw):
-    print("Wow ! Vous avez eu une QuinteFlush !")
-    bankroll = (bankroll-betPlayer)+(betPlayer * 50)
-    sleep(1)
-    print("Le gain  a été crédité sur votre compte. Vous avez maintenant " + str(bankroll) + "€ sur votre compte")
+    resultat = "Bravo vous avez obtenu une Quinte Flush"
+    g = (bankroll-betPlayer)+(betPlayer * 50)
+    return resultat, g
 
   elif square(LastDraw) == True:
-    print("Vous avez fait un Carré ! Bravo !")
-    bankroll = (bankroll-betPlayer)+(betPlayer * 25)
-    sleep(1)
-    print("Le gain  a été crédité sur votre compte. Vous avez maintenant " + str(bankroll) + "€ sur votre compte")
-
+    resultat = 'Bravo vous avez obtenu un carré'
+    g = (bankroll-betPlayer)+(betPlayer * 25)
+    return resultat, g
 
   elif Full(LastDraw) == True:
-    print("Vous avez fait un Full")
-    bankroll = (bankroll-betPlayer)+(betPlayer * 9)
-    sleep(1)
-    print("Le gain  a été crédité sur votre compte. Vous avez maintenant " + str(bankroll) + "€ sur votre compte")
-
+    resultat = "Bravo vous avez obtenu un full"
+    g = (bankroll-betPlayer)+(betPlayer * 9)
+    return resultat, g
 
   elif Flush(LastDraw) == True:
-    print("Vous venez d'obtenir un Flush")
-    bankroll = (bankroll-betPlayer)+(betPlayer * 6)
-    sleep(1)
-    print("Le gain  a été crédité sur votre compte. Vous avez maintenant " + str(bankroll) + "€ sur votre compte")
+    resultat = "Bravo vous avez obtenu une Flush"
+    g = (bankroll-betPlayer)+(betPlayer * 6)
+    return resultat, g
 
   elif Quinte(LastDraw) == True:
-    print("Vous avez une Quinte")
-    bankroll = (bankroll-betPlayer)+(betPlayer * 4)
-    sleep(1)
-    print("Le gain  a été crédité sur votre compte. Vous avez maintenant " + str(bankroll) + "€ sur votre compte")
+    resultat = "Bravo vous avez obtenu une Quinte"
+    g = (bankroll-betPlayer)+(betPlayer * 4)
+    return resultat, g
+
 
   elif Brelan(LastDraw) == True:
-    print("Vous avez obtenu un Brelan")
-    bankroll = (bankroll-betPlayer)+(betPlayer * 3)
-    sleep(1)
-    print("Le gain  a été crédité sur votre compte. Vous avez maintenant " + str(bankroll) + "€ sur votre compte")
+    resultat = "Bravo vous avez obtenu un Brelan"
+    g = (bankroll-betPlayer)+(betPlayer * 3)
+    return resultat, g
 
   elif doublePairs(LastDraw) == True:
-    print("Vous avez une double paire ! Vous remportez deux fois la mise")
-    bankroll = (bankroll-betPlayer)+(betPlayer * 2)
-    sleep(1)
-    print("Le gain  a été crédité sur votre compte. Vous avez maintenant " + str(bankroll) + "€ sur votre compte")
-  
+    resultat = "Bravo vous avez obtenu une double paire"
+    g = (bankroll-betPlayer)+(betPlayer * 2)
+    return resultat, g
+
   elif Pairs(LastDraw) == True:
-    print("Vous avez obtenu une paire ! Vous remportez  votre mise")
-    bankroll = (bankroll-betPlayer)+(betPlayer * 1)
-    sleep(1)
-    print("Le gain  a été crédité sur votre compte. Vous avez maintenant " + str(bankroll) + "€ sur votre compte")
-  else:
-    print("Désolé, Vous n'avez rien gagné ! Vous aurez plus de chance la prochaine fois")
-    bankroll = bankroll - betPlayer 
-    sleep(1.5)
-  
-  return bankroll
+    resultat = "Bravo vous avez obtenu une Paire"
+    g = (bankroll-betPlayer)+(betPlayer * 1)
+    return resultat, g
 
 
 def Pairs(LastDraw):
