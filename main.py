@@ -44,6 +44,7 @@ def game():
     session ['error-message'] = "Désolé mais votre mise est supérieure à l'argent sur votre compte"
     return render_template('game.html')
   else:
+    session["newBanque"] = session["Banque"] - session["Bet"]
     drawed_cards, newDeck  = firstDraw(deck)
     session["drawed_cards"] = drawed_cards
     session["deck"] = newDeck
@@ -56,6 +57,36 @@ def game():
 def draw():
 
   return render_template("draw.html")
+  
+
+@app.route('/tirage', methods=['POST'])  
+def Secondraw():
+    LastDraw = session['drawed_cards']
+
+    for card in request.form:
+      LastDraw.remove(card)
+    LastDraw = secondDraw(LastDraw, session['deck'])
+    session['drawed_cards'] = LastDraw
+
+    return redirect(url_for("result"))
+
+
+
+@app.route('/result')
+
+def final():
+  return render_template('finalFile.html')
+
+
+
+@app.route('/result')
+def result():
+
+  
+
+
+  return render_template("finalFile.html")
+
 
 
 

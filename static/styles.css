@@ -2,9 +2,6 @@ body{
     background-color: lightblue;
 }
 
-
-
-
 .title{
     text-align: center;
         
@@ -38,3 +35,13 @@ body{
     padding-top: 20%;
     padding-inline-end: 40px;
 }
+
+.label{
+    display: none;
+    visibility: hidden;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+    input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;}

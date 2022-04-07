@@ -43,47 +43,58 @@ def deckChoice(drawed_cards):
       sleep(0.5)
   return newDeck
 
-def secondDraw(newDeck, deck):
+def secondDraw(LastDraw, newDeck):
+  cardsNumber = len(LastDraw)
+  cardsToDraw = 5 - cardsNumber
+  newCards = random.sample(newDeck, cardsToDraw)
 
-  remainingCards = len(newDeck)
-  LastDraw = []
-  if remainingCards == 5:
-    LastDraw = newDeck.copy()
-    print("Voici votre tirage final : ")
-    sleep(1.5)
-    print(LastDraw)
 
-  elif remainingCards == 4:
-    LastDraw = newDeck.copy()
-    LastDraw.extend(sample(deck, 1))
-    print("Voici votre tirage final : ")
-    sleep(1.5)
-    print(LastDraw)
+  for i in newCards:
+    LastDraw.append(i)
 
-  elif remainingCards == 3:
-      LastDraw = newDeck.copy()
-      LastDraw.extend(sample(deck, 2))
+  return LastDraw
+
+
+
+
+  
+  # if La == 5:
+  #   LastDraw = newDeck.copy()
+  #   print("Voici votre tirage final : ")
+  #   sleep(1.5)
+  #   print(LastDraw)
+
+  # elif remainingCards == 4:
+  #   LastDraw = newDeck.copy()
+  #   LastDraw.extend(sample(deck, 1))
+  #   print("Voici votre tirage final : ")
+  #   sleep(1.5)
+  #   print(LastDraw)
+
+  # elif remainingCards == 3:
+  #     LastDraw = newDeck.copy()
+  #     LastDraw.extend(sample(deck, 2))
       
-      print("Voici votre tirage final : ")
-      sleep(1.5)
-      print(LastDraw)
-  elif remainingCards == 2:
-        LastDraw = newDeck.copy()
-        LastDraw.extend(sample(deck, 3))
-        print("Voici votre tirage final : ")
-        sleep(1.5)
-        print(LastDraw)
-  elif remainingCards == 1:
-         LastDraw = newDeck.copy()
-         LastDraw.extend(sample(deck, 4))
-         print("Voici votre tirage final : ")
-         sleep(1.5)
-         print(LastDraw)
-  else:
-    LastDraw = newDeck
-    print("Voici votre tirage final : ")
-    LastDraw.extend(sample(deck, 5))
-    sleep(1.5)
-    print(LastDraw)
+  #     print("Voici votre tirage final : ")
+  #     sleep(1.5)
+  #     print(LastDraw)
+  # elif remainingCards == 2:
+  #       LastDraw = newDeck.copy()
+  #       LastDraw.extend(sample(deck, 3))
+  #       print("Voici votre tirage final : ")
+  #       sleep(1.5)
+  #       print(LastDraw)
+  # elif remainingCards == 1:
+  #        LastDraw = newDeck.copy()
+  #        LastDraw.extend(sample(deck, 4))
+  #        print("Voici votre tirage final : ")
+  #        sleep(1.5)
+  #        print(LastDraw)
+  # else:
+  #   LastDraw = newDeck
+  #   print("Voici votre tirage final : ")
+  #   LastDraw.extend(sample(deck, 5))
+  #   sleep(1.5)
+  #   print(LastDraw)
 
   return LastDraw

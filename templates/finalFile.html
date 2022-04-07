@@ -24,17 +24,13 @@
             <br>
             <br>
 
+
             <div>
-                <form  action="/tirage" method="POST">
+
                     {% for card in session["drawed_cards"] %}
-                    
-                        <input class="label" type="checkbox" class="form-check-input" id="{{ card }}" name="{{ card }}" />
-                        <label class="form-check-label" for="{{ card }}">
-                            <img class="card-img" data-card="{{card}}" data-keep="true" src="{{ url_for('static',filename='cards/'+card+'.png') }}" alt="card-video-poker" onclick="clickOnCardForReverse(this)"/>
-                        </label>
+                      <img class="card-img" data-card="{{card}}" data-keep="true" src="{{ url_for('static',filename='cards/'+card+'.png') }}" alt="card-video-poker" onclick="clickOnCardForReverse(this)"/>
                     {% endfor %}
-                    <input type="submit" value="Confirmer votre sélection">
-                </form>
+
 
 
             </div>
@@ -53,3 +49,14 @@
          src="{{ url_for('static',filename='scrpt.js') }}"></script>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
