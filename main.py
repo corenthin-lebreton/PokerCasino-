@@ -19,9 +19,9 @@ def start():
 
   if age < 18:
       session['error-form'] = "Désolé vous n'avez pas l'âge légal requis."
-      return render_template('start.html')
+      return render_template('index.html')
   else:  
-      session['Banque'] = int(request.form['Banque']) + "€"
+      session['Banque'] = int(request.form['Banque'])
       return redirect(url_for('gamer'))
 
 @app.route("/game")
@@ -48,7 +48,10 @@ def draw():
   return render_template("draw.html")
 
 
-
+@app.route('/tirage', methods=["POST"])
+def first_draw():
+  Bet = int(request.form["Bet"])
+  return render_template('draw.html')
 
 if __name__ == '__main__':
   app.run(debug = True)

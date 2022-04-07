@@ -4,9 +4,47 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+     <link rel='stylesheet' type='text/css' media='screen' href='{{ url_for('static', filename="styles.css")}}'>
+    <title>Poker</title>
 </head>
 <body>
-    
+    <header>
+        <h2 class="title">Bienvenue au casino</h2>
+
+    </header>
+
+    <main>
+
+        <div class="bankroll">
+
+            <p class="bank">Votre argent : {{session['Banque'] }}</p>
+            <p class="mise">Votre mise : {{session['Bet'] }}</p>
+            
+            <br>
+
+            
+
+
+                <br>
+                <br>
+
+            <div class="cards">
+                <img class="card-img" id='data-card' src="{{ url_for('static', filename='cards/back.png') }}" alt="card-back-video-poker" />
+                <img class="card-img" src="{{ url_for('static', filename='cards/back.png') }}" alt="card-back-video-poker" />
+                <img class="card-img" src="{{ url_for('static', filename='cards/back.png') }}" alt="card-back-video-poker" />
+                <img class="card-img" src="{{ url_for('static', filename='cards/back.png') }}" alt="card-back-video-poker" />
+                <img class="card-img" src="{{ url_for('static', filename='cards/back.png') }}" alt="card-back-video-poker" />
+            </div>
+        </div>
+
+
+
+    </main>
+
+    <footer>
+        
+    </footer>
+    <script type="text/javascript"
+         src="{{ url_for('static', filename='scrpt.js') }}"></script>
 </body>
 </html>
