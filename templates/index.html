@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Poker IPSSI</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='{{ url_for( 'static' ,filename="styles.css")}}'>
+    <script src=''></script>
+</head>
+<body>
+        <header>
+                <h2 class ="title">BIENVENUE SUR LE POKER DE L'IPSSI</h2>
+
+        </header>
+<main>
+        <div>
+                {% if session['error-form'] %}
+
+                <div class="message-error">{{ session["error-form"] }}
+
+                </div>
+                {% endif %}
+
+
+
+                <form method="post">
+                        <input name ="age" type="number" value="O" placeholder="Entrez votre âge" required>
+                        <input name ="Banque" type="number" value="O" placeholder="Mettez de l'argent dans la banque" required>
+                        <input type="submit" value="Valider">
+                </form>
+        </div>
+
+</main>
+
+</body>
+</html>

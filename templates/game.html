@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link rel='stylesheet' type='text/css' media='screen' href='{{ url_for('static', filename="styles.css")}}'>
+    <title>Poker</title>
+</head>
+<body>
+    <header>
+        <h2 class="title">Test</h2>
+
+    </header>
+
+    <main>
+
+        <div class="bankroll">
+
+            <p class="bank">{{session['Banque'] }}</p>
+            <br>
+
+            <p>{{session['Bet'] }}</p>
+
+
+                <br>
+                <br>
+
+            <div class="cards">
+                <img class="card-img" id='data-card' src="{{ url_for('static', filename='cards/back.png') }}" alt="card-back-video-poker" />
+                <img class="card-img" src="{{ url_for('static', filename='cards/back.png') }}" alt="card-back-video-poker" />
+                <img class="card-img" src="{{ url_for('static', filename='cards/back.png') }}" alt="card-back-video-poker" />
+                <img class="card-img" src="{{ url_for('static', filename='cards/back.png') }}" alt="card-back-video-poker" />
+                <img class="card-img" src="{{ url_for('static', filename='cards/back.png') }}" alt="card-back-video-poker" />
+            </div>
+        </div>
+
+
+            <div class="bet">
+
+                {% if session['error-message'] %}
+
+                <div class="message-error">{{ session["error-message"] }}
+
+                </div>
+                {% endif %}
+
+
+                <form  id ='form' method="post">
+
+                   <input name="Bet" type="number" placeholder="Placez votre pari" required>
+                   <input type="submit" value="Valider">
+
+                </form>
+
+            </div>
+
+    </main>
+
+    <footer>
+        
+    </footer>
+    <script type="text/javascript"
+         src="{{ url_for('static', filename='scrpt.js') }}"></script>
+</body>
+</html>
