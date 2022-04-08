@@ -1,6 +1,5 @@
 from combinaisons import Combinaisons
-from Machine import Machine
-from time import sleep
+from Machine import *
 from flask import Flask, render_template, url_for, request, session, redirect
 
 
@@ -18,7 +17,7 @@ def start():
 
 
   if age < 18:
-      session['error-form'] = "Désolé vous n'avez pas l'âge légal requis."
+      session['error-form'] = "Ce n'est pas un lieu pour les gamins !"
       return render_template('index.html')
   else:  
       session['Banque'] = int(request.form['Banque'])

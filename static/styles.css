@@ -4,6 +4,11 @@
     background-position: 20% 80%;
 }
 
+.Acceuil{
+    background-image: url(Image/Tabletop.jpg);
+    background-position-x: -50px ;
+}
+
 .title{
     text-align: center;
     color: black;
@@ -11,8 +16,20 @@
     font-size: 25px;   
 }
 
+.title3{
+    width: 10vw;
+    padding: none;
+    transform: translate(670px,230px);
+}
+
 .formulaire{
     transform: translate(80px, 100px);
+}
+
+.message-error{
+    color: black;
+    font-size: 1vw;
+    transform: translate(60px,93px);
 }
 
 .sword{
@@ -33,7 +50,7 @@
     display: block;
     margin-bottom: 35px;
     position: center;
-    transform: translate(0px, 10px);
+    transform: translate(0px, 15px);
 } 
 
 .formulaire input[type=submit] {
@@ -42,7 +59,7 @@
     padding: 5px;
     color: red;
     transition: all 0.5s ease;
-    transform: translate(65px, 10px);
+    transform: translate(65px, 15px);
 }
 
 .formulaire input[type=submit]:hover {
@@ -63,6 +80,20 @@
     transform: translate(600px,230px);
 }
 
+.parchemin_mise2{
+    margin: 0%;
+    padding: 0%;
+    width: 20vw;
+    transform: translate(600px,400px); 
+}
+
+.parchemin_mise3{
+    margin: 0%;
+    padding: 0%;
+    width: 20vw;
+    transform: translate(590px,400px);
+}
+
 .mise{
     transform: translate(20px,-170px);
 }
@@ -73,7 +104,6 @@
     padding: 5px;
     color: red;
     transition: all 0.5s ease;
-    
 }
 
 .mise input[type=submit]:hover {
@@ -81,14 +111,58 @@
     color: white;
 }
 
-.bankroll2{
+.validation{
+    transform: translate(-290px,250px);
+}
+
+.cards2 input[type=submit] {
+    background-color: white;
+    border: 1px solid grey;
+    padding: 5px;
+    color: red;
+    transition: all 0.5s ease;
+}
+
+.cards2 input[type=submit]:hover {
+    background-color: red;
+    color: white;
+}
+
+.bankroll1{
+    padding: none;
     color: black;
     transform: translate(0px,-80px);
+}
+
+.bankroll2{
+    padding: none;
+    width: 50vw;
+    transform: translate(700px,250px);
+}
+
+.bankroll3{
+    padding: none;
+    width: 50vw;
+    transform: translate(688px,260px);
 }
 
 .cards{
     text-align: center;
     transform: translate(0px,120px);
+}
+
+.cards2{
+    padding: none;
+    width: 50vw;
+    text-align: center;
+    transform: translate(435px,-110px);
+}
+
+.cards3{
+    padding: none;
+    width: 50vw;
+    text-align: center;
+    transform: translate(350px,-160px);
 }
 
 .bank{
@@ -98,7 +172,6 @@
 
 .parchemin{
     background-image: url(Image/Parchemin.jpg);
-    
     background-size: 365px;
     border: solid;
     height: 500px;

@@ -1,6 +1,6 @@
-from time import sleep
+
 from iteration_utilities import duplicates
-from numpy import result_type
+
 
 def uncomposedCards(LastDraw):
   cardsValue = []

@@ -7,9 +7,9 @@
      <link rel='stylesheet' type='text/css' media='screen' href='{{ url_for('static', filename="styles.css")}}'>
     <title>Poker</title>
 </head>
-<body>
+<body class="Acceuil">
     <header>
-        <h2 class="title">Bienvenue au casino</h2>
+        
 
     </header>
 
@@ -17,15 +17,17 @@
 
         <div class="bankroll">
 
-            <p class="bank">Votre argent : {{session['newBanque']}}</p>
-            <p class="mise">Votre mise : {{session['Bet'] }}</p>
+            <img class="parchemin_mise3" src="static/Image/Parcheminancien.png"></img>
+            <h2 class="title3">Tirage finale !</h2>
+            <p class="bankroll3">Votre argent : {{session['newBanque']}}</p>
+            
             
             <br>
             <br>
             <br>
 
-
-            <div>
+            
+            <div class="cards3">
 
                     {% for card in session["drawed_cards"] %}
                       <img class="card-img" data-card="{{card}}" data-keep="true" src="{{ url_for('static',filename='cards/'+card+'.png') }}" alt="card-video-poker" onclick="clickOnCardForReverse(this)"/>
@@ -34,6 +36,8 @@
 
 
             </div>
+
+            
 
                 
         </div>
