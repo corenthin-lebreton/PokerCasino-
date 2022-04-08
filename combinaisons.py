@@ -1,6 +1,9 @@
 
 from iteration_utilities import duplicates
+<<<<<<< HEAD
 
+=======
+>>>>>>> c1f5fb85c73167ef24e8c934fd6864c0326706a8
 
 def uncomposedCards(LastDraw):
   cardsValue = []
@@ -29,49 +32,52 @@ def Combinaisons(LastDraw, bankroll, betPlayer):
 
   if QuinteFlushRoyale(LastDraw):
     resultat = "Félicitation ! Vous avez obtenu une Quinte Flush Royale"
-    g = (bankroll-betPlayer)+(betPlayer * 250)
+    g = betPlayer * 250
     return resultat,g
 
   elif QuinteFlush(LastDraw):
     resultat = "Bravo vous avez obtenu une Quinte Flush"
-    g = (bankroll-betPlayer)+(betPlayer * 50)
+    g = betPlayer * 50
     return resultat, g
 
   elif square(LastDraw) == True:
     resultat = 'Bravo vous avez obtenu un carré'
-    g = (bankroll-betPlayer)+(betPlayer * 25)
+    g = betPlayer * 25
     return resultat, g
 
   elif Full(LastDraw) == True:
     resultat = "Bravo vous avez obtenu un full"
-    g = (bankroll-betPlayer)+(betPlayer * 9)
+    g = betPlayer * 9
     return resultat, g
 
   elif Flush(LastDraw) == True:
     resultat = "Bravo vous avez obtenu une Flush"
-    g = (bankroll-betPlayer)+(betPlayer * 6)
+    g = betPlayer * 6
     return resultat, g
 
   elif Quinte(LastDraw) == True:
     resultat = "Bravo vous avez obtenu une Quinte"
-    g = (bankroll-betPlayer)+(betPlayer * 4)
+    g = betPlayer * 4
     return resultat, g
 
 
   elif Brelan(LastDraw) == True:
     resultat = "Bravo vous avez obtenu un Brelan"
-    g = (bankroll-betPlayer)+(betPlayer * 3)
+    g = betPlayer * 3
     return resultat, g
 
   elif doublePairs(LastDraw) == True:
     resultat = "Bravo vous avez obtenu une double paire"
-    g = (bankroll-betPlayer)+(betPlayer * 2)
+    g = betPlayer * 2
     return resultat, g
 
   elif Pairs(LastDraw) == True:
     resultat = "Bravo vous avez obtenu une Paire"
-    g = (bankroll-betPlayer)+(betPlayer * 1)
+    g = betPlayer * 1
     return resultat, g
+  else:
+    resultat = "Désolé vous n'avez aucune combinaisons gagnantes"
+    return resultat, 0
 
 
 def Pairs(LastDraw):

@@ -1,5 +1,5 @@
 const play          = () => location.href = "/tirage";
-const restart       = () => location.href = "/board";
+const restart       = () => location.href = "/game";
 const goHomePage    = () => location.href = "/";
 
 const clickOnCardForReverse = thisCard => {
