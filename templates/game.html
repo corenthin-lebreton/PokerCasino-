@@ -9,7 +9,7 @@
 </head>
 <body class="Acceuil">
     <header>
-        <h2 class="title"></h2>
+        
     </header>
     <main>
         <div class="bankroll">  
@@ -26,14 +26,15 @@
         </div>
             <div class="bet">
                 {% if session['error-message'] %}
-                <div class="message-error">{{ session["error-message"] }}
+                <div class="message-error2">{{ session["error-message"] }}
                 </div>
                 {% endif %}
                 <img class="parchemin_mise" src="static/Image/Parcheminancien.png"></img>
                 <form  id ='form' method="post" class="mise">
                    <input name="Bet" type="number" placeholder="Placez votre pari" required>
                    <input type="submit" value="Valider">
-                   <p class="bankroll2">Votre argent : {{session['Banque'] }}</p>
+                   <p class="bankroll1">Votre argent : {{session['Banque'] }}</p>
+                   <h2 class="title1">Placez vos deniers étranger ! </h2>
                 </form>
             </div>
     </main>

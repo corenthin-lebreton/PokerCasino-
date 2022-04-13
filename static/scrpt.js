@@ -12,3 +12,6 @@ const clickOnCardForReverse = thisCard => {
 
     thisCard.setAttribute("src", stateImg);
 }
+
+
+

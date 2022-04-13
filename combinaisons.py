@@ -1,9 +1,5 @@
 
 from iteration_utilities import duplicates
-<<<<<<< HEAD
-
-=======
->>>>>>> c1f5fb85c73167ef24e8c934fd6864c0326706a8
 
 def uncomposedCards(LastDraw):
   cardsValue = []

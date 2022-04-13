@@ -6,7 +6,8 @@
 
 .Acceuil{
     background-image: url(Image/Tabletop.jpg);
-    background-position-x: -50px ;
+    background-position-x: -40px ;
+    overflow-x:hidden;
 }
 
 .title{
@@ -16,10 +17,26 @@
     font-size: 25px;   
 }
 
+.title1{
+    margin: -80px;
+    padding: none;
+    color: black;
+    font-size: 18px;
+    transform: translate(-5px,-60px);
+}
+
+.title2{
+    color: white;
+    font-size: 18px;
+    transform: translate(100px);
+
+}
+
+
 .title3{
     width: 10vw;
     padding: none;
-    transform: translate(670px,230px);
+    transform: translate(678px,255px);
 }
 
 .formulaire{
@@ -30,6 +47,31 @@
     color: black;
     font-size: 1vw;
     transform: translate(60px,93px);
+}
+
+.message-error2{
+    color: white;
+    font-size: 1vw;
+    transform: translate(560px,130px);
+}
+
+.message-fin{
+    color: white;
+    transform: translate(0px);
+}
+
+.Replay{
+    background-color: white;
+    border: 1px solid grey;
+    padding: 5px;
+    color: red;
+    transition: all 0.5s ease;
+    transform: translate(13px,180px);
+}
+
+.Replay:hover{
+    background-color: red;
+    color: white;
 }
 
 .sword{
@@ -74,24 +116,24 @@
 }
 
 .parchemin_mise{
-    margin: 0%;
-    padding: 0%;
+    margin: none;
+    padding: none;
     width: 20vw;
     transform: translate(600px,230px);
 }
 
 .parchemin_mise2{
-    margin: 0%;
-    padding: 0%;
+    margin: none;
+    padding: none;
     width: 20vw;
-    transform: translate(600px,400px); 
+    transform: translate(600px,369px); 
 }
 
 .parchemin_mise3{
-    margin: 0%;
-    padding: 0%;
+    margin: none;
+    padding: none;
     width: 20vw;
-    transform: translate(590px,400px);
+    transform: translate(600px,437px);
 }
 
 .mise{
@@ -112,7 +154,7 @@
 }
 
 .validation{
-    transform: translate(-290px,250px);
+    transform: translate(-290px,220px);
 }
 
 .cards2 input[type=submit] {
@@ -129,21 +171,23 @@
 }
 
 .bankroll1{
-    padding: none;
-    color: black;
-    transform: translate(0px,-80px);
+    margin-right: 700px;
+
+    color:black;
+    transform: translate(345px,-75px);
 }
 
 .bankroll2{
+    color:black;
     padding: none;
     width: 50vw;
-    transform: translate(700px,250px);
+    transform: translate(690px,225px);
 }
 
 .bankroll3{
     padding: none;
     width: 50vw;
-    transform: translate(688px,260px);
+    transform: translate(690px,242px);
 }
 
 .cards{
@@ -162,7 +206,7 @@
     padding: none;
     width: 50vw;
     text-align: center;
-    transform: translate(350px,-160px);
+    transform: translate(353px,-148px);
 }
 
 .bank{
@@ -201,3 +245,4 @@ input[type=number]::-webkit-inner-spin-button,
     input[type=number]::-webkit-outer-spin-button {
     -webkit-appearance: none;
     margin: 0;}
+
