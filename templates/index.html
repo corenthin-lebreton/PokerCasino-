@@ -5,8 +5,8 @@
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <title>Poker IPSSI</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <link rel='stylesheet' type='text/css' media='screen' href='{{ url_for( 'static' ,filename="styles.css")}}'>
-    <script src=''></script>
+    <link rel='stylesheet' type='text/css' media='screen' href='{{ url_for( "static" ,filename="styles.css")}}'>
+    <audio src="{{ url_for( 'static' ,filename='tavern.mp3')}}"></audio>
 </head>
 <body id="Acceuil">
         <header>
@@ -39,6 +39,7 @@
 
 <script type="text/javascript"
          src="{{ url_for('static',filename='scrpt.js') }}"></script>
+<script type="text/javascript">Musique({{session['musique']}})</script>
 
 </body>
 </html>

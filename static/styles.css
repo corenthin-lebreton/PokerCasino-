@@ -26,12 +26,10 @@
 }
 
 .title2{
-    color: white;
+    color: black;
     font-size: 18px;
-    transform: translate(100px);
-
+    transform: translate(655px,160px);
 }
-
 
 .title3{
     width: 10vw;
@@ -154,7 +152,7 @@
 }
 
 .validation{
-    transform: translate(-290px,220px);
+    transform: translate(-290px,190px);
 }
 
 .cards2 input[type=submit] {
@@ -191,8 +189,7 @@
 }
 
 .cards{
-    text-align: center;
-    transform: translate(0px,120px);
+    transform: translate(530px,120px);
 }
 
 .cards2{

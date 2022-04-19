@@ -1,5 +1,5 @@
 const play          = () => location.href = "/tirage";
-const restart       = () => location.href = "/game";
+const restart       = () => {Musique(); location.href = "/game";}
 const goHomePage    = () => location.href = "/";
 
 const clickOnCardForReverse = thisCard => {
@@ -14,4 +14,20 @@ const clickOnCardForReverse = thisCard => {
 }
 
 
+function Musique(time=0){
+    window.addEventListener("DOMContentLoaded", event => {
+        const audio = document.querySelector("audio");
+        audio.volume = 0.2;
+        audio.currentTime=time;
+        console.log(audio)
+        audio.play();
+      });
+}
+    
 
+
+// function Musique(){
+//     const audio = document.querySelector("audio");
+//     let time = audio.currentTime;
+
+// }

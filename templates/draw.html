@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <link rel='stylesheet' type='text/css' media='screen' href='{{ url_for('static', filename="styles.css")}}'>
+     <link rel='stylesheet' type='text/css' media='screen' href='{{ url_for("static", filename="styles.css")}}'>
+     <audio src="{{ url_for( 'static' ,filename='tavern.mp3')}}"></audio>
     <title>Poker</title>
 </head>
 <body class="Acceuil">
     <header>
-        <h2 class="title"></h2>
 
     </header>
 
@@ -25,12 +25,12 @@
 
             
             <img class="parchemin_mise2" src="static/Image/Parcheminancien.png"></img>
-            <p class="bankroll2">Votre argent : {{session['newBanque']}}</p>
+            <p class="bankroll2">Votre argent : {{session['Banque']}}</p>
             
             
             <div class="tirage">
 
-                
+                <h1 class="title2">Faites vos jeux étranger !</h1>
                 <form class="cards2" action="/tirage" method="POST">
                     {% for card in session["drawed_cards"] %}
                         <input class="label" type="checkbox" class="form-check-input" id="{{ card }}" name="{{ card }}" />
@@ -38,6 +38,7 @@
                             <img class="card-img" data-card="{{card}}" data-keep="true" src="{{ url_for('static',filename='cards/'+card+'.png') }}" alt="card-video-poker" onclick="clickOnCardForReverse(this)"/>
                         </label>
                     {% endfor %}
+                    
                     <input class="validation" type="submit" value="Confirmer votre sélection">    
                 </form>
 
@@ -55,5 +56,6 @@
     </footer>
     <script type="text/javascript"
          src="{{ url_for('static',filename='scrpt.js') }}"></script>
+         <script type="text/javascript">Musique({{session['musique']}})</script>
 </body>
 </html>

@@ -19,12 +19,13 @@ def index():
 def start():
   age = int(request.form['age'])
 
-
+  session['error-form'] = False
   if age < 18:
       session['error-form'] = "Ce n'est pas un lieu pour les gamins !"
       return render_template('index.html')
   else:  
       session['Banque'] = int(request.form['Banque'])
+      session['musique'] = 0
       return redirect(url_for('gamer'))
 
 @app.route("/game")
@@ -38,15 +39,16 @@ def gamer():
 def game():
 
   session['Bet'] = int(request.form["Bet"])
+  session['error-message'] = False
   if session['Bet'] > session['Banque']:
     session ['error-message'] = "Désolé mais votre mise est supérieure à l'argent sur votre compte"
     return render_template('game.html')
   else:
-    session["newBanque"] = session["Banque"] - session["Bet"]
+    session['Banque'] = session["Banque"] - session["Bet"]
     drawed_cards, newDeck  = firstDraw(deck)
     session["drawed_cards"] = drawed_cards
     session["deck"] = newDeck
-    
+    session['musique'] = 64.1
 
     return redirect(url_for('draw'))
 
@@ -63,13 +65,13 @@ def Secondraw():
       LastDraw.remove(card)
     LastDraw = secondDraw(LastDraw, session['deck'])
     session['drawed_cards'] = LastDraw
-    resultat, g = Combinaisons(session['drawed_cards'], session['newBanque'], session['Bet'])
+    resultat, g = Combinaisons(session['drawed_cards'], session['Banque'], session['Bet'])
 
     session['result'] = resultat
     print(resultat, g)
     session['gain'] = g
-    session['newBanque'] = session['newBanque'] + session['gain']
-
+    session['Banque'] = session['Banque'] + session['gain']
+    session['musique'] = 85
     return redirect(url_for("result"))
 
 @app.route('/result')
